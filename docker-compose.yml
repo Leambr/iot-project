@@ -20,13 +20,23 @@ services:
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
-            MYSQL_ROOT_PASSWORD: ''
+            MYSQL_ROOT_PASSWORD:
             MYSQL_ROOT_HOST: mysql
             MYSQL_DATABASE: fitness-park
             MYSQL_USER: root
-            MYSQL_PASSWORD: ''
-            MYSQL_ALLOW_EMPTY_PASSWORD: 0
+            MYSQL_PASSWORD:
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
         healthcheck:
             test: ['CMD', 'mysqladmin', 'ping', '-p${DB_PASSWORD}']
             retries: 3
             timeout: 5s
+
+    phpmyadmin:
+        image: 'phpmyadmin:latest'
+        ports:
+            - 8080:80
+        environment:
+            PMA_HOST: db
+            MYSQL_ROOT_PASSWORD: password
+        depends_on:
+            - db
