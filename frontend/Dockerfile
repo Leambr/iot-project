@@ -1,32 +1,21 @@
-# Étape 1 : Utiliser une image de base contenant Node.js
-FROM node:14.17.1 AS build
+# Étape 1 : Construire l'application React
+FROM node:14 as builder
 
-# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers de package.json et package-lock.json
-COPY frontend/package.json frontend/package-lock.json ./
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Installer les dépendances
-RUN npm install
-
-# Copier les fichiers du frontend
-COPY frontend ./
-
-# Exécuter la construction de l'application
+COPY . .
 RUN npm run build
 
-# Étape 2 : Utiliser une image légère contenant Nginx pour servir l'application construite
-FROM nginx:1.21.1
+# Étape 2 : Exécuter l'application construite dans un serveur Nginx léger
+FROM nginx:alpine
 
-# Copier les fichiers construits depuis l'étape précédente
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copier la configuration Nginx personnalisée
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Exposer le port 80
 EXPOSE 80
 
-# Commande de démarrage du serveur Nginx
+# Aucune configuration Nginx personnalisée n'est nécessaire ici
+
 CMD ["nginx", "-g", "daemon off;"]
