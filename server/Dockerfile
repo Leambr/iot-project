@@ -19,4 +19,4 @@ COPY . .
 
 EXPOSE 3123
 
-CMD ["node", "app.js"]
+CMD ["node", "src/app.js"]
