@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+    frontend:
+        build: ./frontend
+        ports:
+            - '80:80'
+
+    server:
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        ports:
+            - '3123:3123'
+        depends_on:
+            - db-iot
+
+    db-iot:
+        image: 'mysql/mysql-server:8.0'
+        container_name: database
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: fitness-park-iot
+            MYSQL_USER: mysql-database
+            MYSQL_PASSWORD: password
+        ports:
+            - '6033:3306'
+        volumes:
+            - dbdata:/var/lib/mysql
+            - ./dump:/docker-entrypoint-initdb.d
+    phpmyadmin:
+        image: 'phpmyadmin:latest'
+        container_name: php-my-admin
+        links:
+            - db-iot
+        environment:
+            PMA_HOST: db-iot
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8081:80
+volumes:
+    dbdata:
