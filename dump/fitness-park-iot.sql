@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 		'Vestiaire femme',
 		'Machines',
 		'Abdos',
+		'Cours commun',
 		'Administration'
 	)
 );
