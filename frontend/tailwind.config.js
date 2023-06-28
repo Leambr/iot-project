@@ -16,10 +16,10 @@ module.exports = {
                 // light mode
                 tremor: {
                     brand: {
-                        faint: '#eff6ff', // blue-50
+                        faint: '#FFF9D7', // light yellow
                         muted: '#bfdbfe', // blue-200
                         subtle: '#60a5fa', // blue-400
-                        DEFAULT: '#3b82f6', // blue-500
+                        DEFAULT: '#FED703', // yellow
                         emphasis: '#1d4ed8', // blue-700
                         inverted: '#ffffff', // white
                     },
@@ -46,10 +46,10 @@ module.exports = {
                 // dark mode
                 'dark-tremor': {
                     brand: {
-                        faint: '#0B1229', // custom
+                        faint: '#FFF9D7', // custom
                         muted: '#172554', // blue-950
                         subtle: '#1e40af', // blue-800
-                        DEFAULT: '#3b82f6', // blue-500
+                        DEFAULT: '#FED703', // yellow
                         emphasis: '#60a5fa', // blue-400
                         inverted: '#030712', // gray-950
                     },
@@ -129,4 +129,5 @@ module.exports = {
         },
     ],
     plugins: [require('@headlessui/tailwindcss')],
+    darkMode: 'class',
 };
