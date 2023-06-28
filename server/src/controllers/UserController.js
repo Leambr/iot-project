@@ -24,15 +24,12 @@ const userController = {
 
   login: async (req, res) => {
 
-    // console.log(req.body);
-
     try {
+
       const user = await userService.login(req.body);
       const response = responseFormatter.formatResponse(res.statusCode, user);
 
-      console.log("RESPONSE ----> ", response);
       res.json(response);
-
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

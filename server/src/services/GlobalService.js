@@ -87,9 +87,64 @@ const deleteById = (sqlQuery, modelName, id) => {
   });
 };
 
+// Login à bouger
+
+const login = (sqlQuery, modelName, postData, table) => {
+
+  return new Promise((resolve, reject) => {
+
+    const ModelClass = require(`../models/${modelName}`);
+    const model = new ModelClass();
+    Object.assign(model, postData);
+
+    const missingProps = Object.keys(model).filter(
+
+      (prop) => model[prop] === undefined
+    );
+
+    if (missingProps.length > 0) {
+
+      reject(
+        new Error(
+          `Données manquantes pour les propriétés : ${missingProps.join(", ")}`
+        )
+      );
+    }
+    else {
+
+      db.query(sqlQuery, postData, (error, result) => {
+
+        if (error) {
+
+          reject(error);
+        }
+        else {
+
+          if (result.length > 0) {
+
+            const userId = result[0].id;
+            const query = `SELECT * FROM ${table} WHERE id = ${userId}`;
+            const postSend = getById(query, modelName, userId);
+
+            resolve(postSend);
+          }
+
+          reject(
+
+            new Error(
+              `Identifiant ou mot de passe incorrects`
+            )
+          );
+        }
+      });
+    }
+  })
+}
+
 module.exports = {
   getAll,
   getById,
   create,
   deleteById,
+  login
 };
