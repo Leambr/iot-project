@@ -12,16 +12,6 @@ const userController = {
     }
   },
 
-  getUserById: async (req, res) => {
-    try {
-      const user = await userService.getUserById(req.params.id);
-      const response = responseFormatter.formatResponse(res.statusCode, user);
-      res.json(response);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  },
-
   createUser: async (req, res) => {
     try {
       const user = await userService.createUser(req.body);
@@ -32,15 +22,21 @@ const userController = {
     }
   },
 
-  deleteUser: async (req, res) => {
+  login: async (req, res) => {
+
+    // console.log(req.body);
+
     try {
-      const user = await userService.deleteUser(req.params.id);
-      const response = responseFormatter.deleteFormatResponse(res.statusCode, user);
+      const user = await userService.login(req.body);
+      const response = responseFormatter.formatResponse(res.statusCode, user);
+
+      console.log("RESPONSE ----> ", response);
       res.json(response);
+
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
-  },
+  }
 };
 
 module.exports = userController;
