@@ -39,26 +39,6 @@ const userService = {
       throw error;
     }
   },
-
-  login: async (user) => {
-
-    try {
-
-      const query = `SELECT * FROM users WHERE username = '${user.username}' AND password = '${user.password}'`;
-
-      const result = await GlobalService.login(
-        query,
-        "User",
-        user,
-        table.users
-      );
-      return result;
-    }
-    catch (error) {
-
-      throw error;
-    }
-  }
 };
 
 module.exports = userService;
