@@ -6,6 +6,8 @@ const port = 3123;
 const userRouter = require("./routes/userRouter");
 const postRouter = require("./routes/postRouter");
 const roomRouter = require("./routes/roomRouter");
+const authRouter = require("./routes/authRouter");
+const jwtHelper = require("./utils/helper/jwtHelper");
 // const authRouter = require("./routes/authRouter");
 
 app.use(morgan('dev')).use(express.json());
@@ -19,7 +21,8 @@ app.use(morgan('dev')).use(express.json());
 
 
 app.get('/', (req, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
-app.use("/api", userRouter, postRouter, roomRouter);
+app.use("/api", authRouter);
+app.use("/api", jwtHelper.authenticateToken, userRouter, postRouter, roomRouter);
 
 // app.get('/api/users', (req, res) => {
 

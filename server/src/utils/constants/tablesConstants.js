@@ -1,4 +1,4 @@
 // TABLE
 exports.users = 'users';
-exports.posts = 'posts';
+exports.rooms = 'rooms';
 
