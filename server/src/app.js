@@ -7,6 +7,7 @@ const userRouter = require("./routes/userRouter");
 const roomRouter = require("./routes/roomRouter");
 const authRouter = require("./routes/authRouter");
 const sensorRouter = require("./routes/sensorRouter");
+const co2Router = require("./routes/co2Router");
 const jwtHelper = require("./utils/helper/jwtHelper");
 // const authRouter = require("./routes/authRouter");
 
@@ -23,7 +24,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use("/api", authRouter);
-app.use("/api", jwtHelper.authenticateToken, userRouter, roomRouter, sensorRouter);
+app.use(
+  "/api", 
+  jwtHelper.authenticateToken, 
+  userRouter, 
+  roomRouter, 
+  sensorRouter,
+  co2Router
+);
 
 // app.get('/api/users', (req, res) => {
 
