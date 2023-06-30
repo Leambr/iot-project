@@ -4,13 +4,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`password` VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS `automation` (
+CREATE TABLE IF NOT EXISTS `rooms` (
 	`id` INT AUTO_INCREMENT PRIMARY KEY,
-	`task_date` DATETIME,
-	`type` ENUM('Lumière', 'Climatisation', 'Chauffage'),
-	`is_done` BOOLEAN,
-	`sensor_id` INT,
-	CONSTRAINT fk_sensor_automation FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
+	`name` ENUM(
+		'Vestiaire homme',
+		'Vestiaire femme',
+		'Machines',
+		'Abdos',
+		'Cours commun',
+		'Administration'
+	)
 );
 
 CREATE TABLE IF NOT EXISTS `sensor` (
@@ -24,8 +27,19 @@ CREATE TABLE IF NOT EXISTS `sensor` (
 		'Co2'
 	),
 	`room_id` INT,
-	CONSTRAINT fk_sensor_room FOREIGN KEY (room_id) REFERENCES room(id) ON DELETE CASCADE ON UPDATE CASCADE
-) CREATE TABLE IF NOT EXISTS `training_courses` (
+	CONSTRAINT fk_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `automation` (
+	`id` INT AUTO_INCREMENT PRIMARY KEY,
+	`task_date` DATETIME,
+	`type` ENUM('Lumière', 'Climatisation', 'Chauffage'),
+	`is_done` BOOLEAN,
+	`sensor_id` INT,
+	CONSTRAINT fk_sensor_automation FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `training_courses` (
 	`id` INT AUTO_INCREMENT PRIMARY KEY,
 	`day` ENUM(
 		'Lundi',
@@ -50,19 +64,7 @@ CREATE TABLE IF NOT EXISTS `sensor` (
 	`is_canceled` BOOLEAN,
 	`is_completed` BOOLEAN,
 	`room_id` INT,
-	CONSTRAINT fk_training_room FOREIGN KEY (room_id) REFERENCES room(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE IF NOT EXISTS `rooms` (
-	`id` INT AUTO_INCREMENT PRIMARY KEY,
-	`name` ENUM(
-		'Vestiaire homme',
-		'Vestiaire femme',
-		'Machines',
-		'Abdos',
-		'Cours commun',
-		'Administration'
-	)
+	CONSTRAINT fk_training_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `light_sensor` (
