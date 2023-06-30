@@ -1,17 +1,28 @@
-const sensorService = require("../services/SensorService");
+const roomService = require("../services/RoomService");
 const responseFormatter = require("../utils/responseFormatter");
-const jwtHelper = require("../utils/helper/jwtHelper");
 
-const sensorController = {
-    getAllSensors: async (_, res) => {
+const roomController = {
+
+    getAllRooms: async (_, res) => {
+
         try {
-            const sensors = await sensorService.getAllSensors();
-            const response = responseFormatter.formatResponse(res.statusCode, sensors);
+            const rooms = await roomService.getAllRooms();
+            const response = responseFormatter.formatResponse(res.statusCode, rooms);
             res.json(response);
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
     },
-};
 
-module.exports = sensorController;
+    getRoomById: async (req, res) => {
+        try {
+            const room = await roomService.getRoomById(req.params.id);
+            const response = responseFormatter.formatResponse(res.statusCode, room);
+            res.json(response);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    },
+}
+
+module.exports = roomController;
