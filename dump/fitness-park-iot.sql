@@ -107,3 +107,14 @@ CREATE TABLE IF NOT EXISTS `co2_sensor` (
 	`date` DATETIME,
 	CONSTRAINT fk_co2_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+--  INSERT
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES (NULL, 'username', 'password');
+
+INSERT INTO `rooms` (`id`, `name`) VALUES (NULL, 'Vestiaire homme'), (NULL, 'Vestiaire femme'), (NULL, 'Machines'), (NULL, 'Abdos'), (NULL, 'Cours commun'), (NULL, 'Administration');
+
+INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (NULL, 'Co2', '3'), (NULL, 'Lumière', '3'), (NULL, 'Température', '3'), (NULL, 'Mouvement', '3'), (NULL, 'Humidité', '3');
+INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (NULL, 'TempÃ©rature', '1'), (NULL, 'Mouvement', '1'), (NULL, 'HumiditÃ©', '1');
+INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (NULL, 'TempÃ©rature', '2'), (NULL, 'Mouvement', '2'), (NULL, 'HumiditÃ©', '2');
+INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (NULL, 'TempÃ©rature', '4'), (NULL, 'Mouvement', '4'), (NULL, 'HumiditÃ©', '4'), (NULL, 'Co2', '4');
