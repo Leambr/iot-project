@@ -30,7 +30,7 @@ const sensorService = {
             throw error;
         }
     },
-
+    
     getSensorsByRoomId: async (id) => {
         try {
             return new Promise((resolve, reject) => {

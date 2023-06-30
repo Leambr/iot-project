@@ -6,6 +6,6 @@ const router = new express.Router();
 
 
 router.get('/sensors', sensorController.getAllSensors)
-router.get('/sensors/:id', sensorController.getSensorById)
+router.get('/sensorById/:id', sensorController.getSensorById)
 router.get('/sensorsByRoom/:id', sensorController.getSensorsByRoomId)
 module.exports = router;

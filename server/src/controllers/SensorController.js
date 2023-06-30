@@ -17,7 +17,7 @@ const sensorController = {
     getSensorById: async (req, res) => {
         try {
             const sensor = await sensorService.getSensorById(req.params.id);
-            const response = responseFormatter.formatResponse(res.statusCode, room);
+            const response = responseFormatter.formatResponse(res.statusCode, sensor);
             res.json(response);
         } catch (error) {
             res.status(500).json({ error: error.message });
