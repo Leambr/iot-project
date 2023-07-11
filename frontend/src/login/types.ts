@@ -1,8 +1,8 @@
-export type LoginAPIResponse = BadCredentialsError | LoginSuccess;
+export type LoginAPIResponse = AuthentificationFailedError | LoginSuccess;
 
-export type BadCredentialsError = {
+export type AuthentificationFailedError = {
     success: false;
-    error: 'BAD_CREDENTIALS';
+    error: 'AUTHENTIFICATION_FAILED';
 };
 
 export interface LoginSuccess {
@@ -13,4 +13,4 @@ export interface LoginSuccess {
     };
 }
 
-export type BadCredentialResult = { success: false; error: 'BAD_CREDENTIALS' };
+export type AuthentificationFailed = { success: false; error: 'AUTHENTIFICATION_FAILED' };
