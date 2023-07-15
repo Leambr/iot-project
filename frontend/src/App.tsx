@@ -1,20 +1,13 @@
-import { Card, Flex, Metric, ProgressBar, Text } from '@tremor/react';
-
-import './App.css';
+import s from './App.module.css';
+import { Dashboard } from './dashboard/Dashboard';
+import { Navbar } from './navbar/components/Navbar';
 
 function App() {
     return (
-        <>
-            <Card className="max-w-xs mx-auto">
-                <Text>Sales</Text>
-                <Metric>$ 71,465</Metric>
-                <Flex className="mt-4">
-                    <Text>32% of annual target</Text>
-                    <Text>$ 225,000</Text>
-                </Flex>
-                <ProgressBar value={32} className="mt-2" />
-            </Card>
-        </>
+        <div className={s.appWrapper}>
+            <Navbar />
+            <Dashboard />
+        </div>
     );
 }
 

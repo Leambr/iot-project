@@ -1,0 +1,9 @@
+.navbarWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    height: 900px;
+    border-right: 2px solid var(--gray-3, #f8f9fa);
+    background: var(--white, #fff);
+}
