@@ -12,14 +12,14 @@ export const Navbar = () => {
                 <div>
                     <Logo />
                 </div>
-                <div>
-                    <DashboardIcon />
-                    <Calendar />
-                    <PieChart />
+                <div className={s.menuIcons}>
+                    <DashboardIcon color="#3B444B" />
+                    <Calendar color="#3B444B" />
+                    <PieChart color="#3B444B" />
                 </div>
             </div>
             <div className={s.navbarSecondContainer}>
-                <Logout />
+                <Logout color="#3B444B" />
             </div>
         </div>
     );
