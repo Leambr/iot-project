@@ -1,0 +1,62 @@
+.loginCard {
+    position: relative;
+    width: 410px;
+    height: 438px;
+    background-color: var(--color-grey-background);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.12);
+    padding: var(--space-16);
+    margin-top: 100px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--space-32);
+}
+
+.formButton {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: var(--space-8);
+    border: none;
+    border-radius: 4px;
+    background-color: var(--yellow-color-primary);
+}
+
+.formButton:hover {
+    background-color: var(--yellow-color-tertiary);
+}
+
+.loginForm .loginLabel {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: var(--font-weight-semi-bold);
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+}
+
+.loginForm input {
+    padding: var(--space-8);
+    border: 1px solid #dde2e5;
+    border-radius: 4px;
+}
+
+input::placeholder {
+    color: #dde2e5;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
