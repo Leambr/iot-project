@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar } from '../../common/Icons/Calendar';
 import { DashboardIcon } from '../../common/Icons/DashboardIcon';
@@ -18,10 +18,11 @@ export const Navbar = () => {
     const [activeIcon, setActiveIcon] = useState('');
     const navigate = useNavigate();
 
-    const handleNavigation = ({ iconName, path }: Navigation) => {
-        setActiveIcon(iconName);
-        navigate(path);
-    };
+    useEffect(() => {
+        const queryPath = window.location.pathname;
+        setActiveIcon(queryPath);
+    });
+
     console.log(activeIcon);
     return (
         <>
@@ -33,38 +34,23 @@ export const Navbar = () => {
                         </IconWrapper>
                     </div>
                     <div className={s.menuIcons}>
-                        <div
-                            className={s.dashboardIcon}
-                            onClick={() => handleNavigation({ iconName: 'dashboard', path: '/' })}
-                        >
+                        <div className={s.dashboardIcon} onClick={() => navigate('/')}>
                             <IconWrapper>
-                                <DashboardIcon
-                                    color={activeIcon === 'dashboard' ? '#fed703' : '#3B444B'}
-                                />
+                                <DashboardIcon color={activeIcon === '/' ? '#fed703' : '#3B444B'} />
                             </IconWrapper>
                         </div>
-                        <div
-                            className={s.calendar}
-                            onClick={() =>
-                                handleNavigation({ iconName: 'calendar', path: '/calendar' })
-                            }
-                        >
+                        <div className={s.calendar} onClick={() => navigate('/calendar')}>
                             <IconWrapper>
                                 <Calendar
-                                    color={activeIcon === 'calendar' ? '#fed703' : '#3B444B'}
+                                    color={activeIcon === '/calendar' ? '#fed703' : '#3B444B'}
                                 />
                             </IconWrapper>
                         </div>
 
-                        <div
-                            className={s.pieChart}
-                            onClick={() =>
-                                handleNavigation({ iconName: 'pieChard', path: '/pieChart' })
-                            }
-                        >
+                        <div className={s.pieChart} onClick={() => navigate('/pieChart')}>
                             <IconWrapper>
                                 <PieChart
-                                    color={activeIcon === 'pieChart' ? '#fed703' : '#3B444B'}
+                                    color={activeIcon === '/pieChart' ? '#fed703' : '#3B444B'}
                                 />
                             </IconWrapper>
                         </div>
