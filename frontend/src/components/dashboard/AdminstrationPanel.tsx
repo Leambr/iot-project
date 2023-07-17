@@ -12,6 +12,7 @@ import {
     Legend,
     BadgeDelta,
 } from '@tremor/react';
+import React from 'react';
 import { InputCardRange } from './inputLuminosityRange/InputCardRange';
 
 type Props = {
