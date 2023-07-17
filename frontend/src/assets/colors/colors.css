@@ -1,6 +1,7 @@
 :root {
-    --black-color-primary-font: #0000;
-    --black-color-secondary-font: #3b444b;
+    --black-ink-primary-font: #0000;
+    --black-ink-secondary-font: #3b444b;
+    --black-ink-tertiary-font: #6b7280;
 
     --grey-color-primary: #cdcdcd;
     --grey-color-secondary: #e3e3e3;

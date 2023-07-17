@@ -1,0 +1,22 @@
+.inputCard {
+    width: 100%;
+}
+
+.headerCard {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    color: var(--black-ink-tertiary-font);
+}
+
+.headerCard span {
+    margin-bottom: 0%;
+}
+
+.contentCard input {
+    min-width: 10px;
+    width: 100%;
+    outline: none;
+    margin-top: 4%;
+}

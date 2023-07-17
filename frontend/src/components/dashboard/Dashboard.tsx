@@ -17,7 +17,7 @@ export const Dashboard = () => {
                     <Tab>Vestiaire femme</Tab>
                 </TabList>
                 <TabPanels>
-                    <AdminstrationPanel />
+                    <AdminstrationPanel room="Administration" />
                 </TabPanels>
             </TabGroup>
         </div>
