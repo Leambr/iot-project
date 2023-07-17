@@ -1,4 +1,4 @@
-import { Callout, Card, Metric, TabPanel, Text, Grid, Col } from '@tremor/react';
+import { Callout, Card, Grid, Metric, TabPanel, Text } from '@tremor/react';
 
 export const AdminstrationPanel = () => {
     return (

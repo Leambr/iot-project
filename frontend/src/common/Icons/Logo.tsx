@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Logo = (): JSX.Element => (
     <svg width="31" height="28" viewBox="0 0 31 28" fill="none">
         <path

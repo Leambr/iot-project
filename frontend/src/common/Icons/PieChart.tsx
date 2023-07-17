@@ -1,4 +1,3 @@
-import React from 'react';
 import { IconProps } from './iconTypes';
 
 export const PieChart = ({ color, ...props }: IconProps): JSX.Element => (

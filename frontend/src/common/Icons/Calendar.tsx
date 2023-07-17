@@ -1,4 +1,3 @@
-import React from 'react';
 import { IconProps } from './iconTypes';
 
 export const Calendar = ({ color, ...props }: IconProps): JSX.Element => (
