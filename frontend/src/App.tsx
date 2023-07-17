@@ -1,12 +1,15 @@
 import s from './App.module.css';
-import { Dashboard } from './dashboard/Dashboard';
-import { Navbar } from './navbar/components/Navbar';
+import { Dashboard } from './components/dashboard/Dashboard';
+import { Navbar } from './components/navbar/Navbar';
+import { BackgroundWrapper } from './components/backgroundWrapper/BackgroundWrapper';
 
 function App() {
     return (
         <div className={s.appWrapper}>
             <Navbar />
-            <Dashboard />
+            <BackgroundWrapper>
+                <Dashboard />
+            </BackgroundWrapper>
         </div>
     );
 }

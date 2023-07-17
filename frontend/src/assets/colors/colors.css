@@ -1,0 +1,12 @@
+:root {
+    --black-color-primary-font: #0000;
+    --black-color-secondary-font: #3b444b;
+
+    --grey-color-primary: #cdcdcd;
+    --grey-color-secondary: #e3e3e3;
+    --grey-color-tertiary: #f8f9fa;
+
+    --yellow-color-primary: #fed703;
+    --yellow-color-secondary: #fee034;
+    --yellow-color-tertiary: #fee971;
+}

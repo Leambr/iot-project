@@ -1,5 +1,7 @@
-import { Tab, TabGroup, TabList } from '@tremor/react';
+import { Tab, TabGroup, TabList, TabPanels, Grid, Col } from '@tremor/react';
 import s from './Dashboard.module.css';
+
+import { AdminstrationPanel } from './AdminstrationPanel';
 
 export const Dashboard = () => {
     return (
@@ -14,6 +16,9 @@ export const Dashboard = () => {
                     <Tab>Vestiaire homme</Tab>
                     <Tab>Vestiaire femme</Tab>
                 </TabList>
+                <TabPanels>
+                    <AdminstrationPanel />
+                </TabPanels>
             </TabGroup>
         </div>
     );
