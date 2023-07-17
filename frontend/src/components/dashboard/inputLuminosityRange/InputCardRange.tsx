@@ -1,8 +1,6 @@
 import s from './InputCardRange.module.css';
-
 import { useState } from 'react';
 import { Luminosity } from '../../../common/Icons/Luminosity';
-import React from 'react';
 
 type Props = {
     title: string;

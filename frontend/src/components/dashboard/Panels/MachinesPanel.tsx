@@ -11,19 +11,20 @@ import {
     ProgressBar,
     Legend,
     BadgeDelta,
+    Badge,
 } from '@tremor/react';
-import React from 'react';
-import { InputCardRange } from './inputLuminosityRange/InputCardRange';
+import { StatusOnlineIcon } from '@heroicons/react/outline';
+import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
 type Props = {
     room: string;
 };
 
-export const AdminstrationPanel = (props: Props) => {
+export const MachinesPanel = (props: Props) => {
     return (
         <TabPanel>
-            <Grid numItems={3} className="gap-6 mt-6">
-                <Card className="max-w-md">
+            <Grid numItems={3} className="gap-6 mt-16">
+                <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
                     <Metric className="text-black">18.4 KWh</Metric>
                     <Callout
@@ -35,7 +36,7 @@ export const AdminstrationPanel = (props: Props) => {
                     </Callout>
                 </Card>
 
-                <Card className="max-w-md">
+                <Card className="max-w mx-auto">
                     <Text>Humidité actuelle : {props.room}</Text>
                     <Metric className="text-black">24%</Metric>
                     <Callout
@@ -47,7 +48,7 @@ export const AdminstrationPanel = (props: Props) => {
                     </Callout>
                 </Card>
 
-                <Card className="h-auto">
+                <Card className="max-w mx-auto">
                     <Flex>
                         <Text>Concentration de CO2 en pourcentage</Text>
                         <Text></Text>
@@ -61,7 +62,7 @@ export const AdminstrationPanel = (props: Props) => {
                     />
                 </Card>
 
-                <Card className="h-auto ">
+                <Card className="max-w mx-auto">
                     <InputCardRange
                         title="Luminosité"
                         room={props.room}
@@ -70,16 +71,16 @@ export const AdminstrationPanel = (props: Props) => {
                     />
                 </Card>
 
-                <Card className="h-auto">
+                <Card className="max-w mx-auto">
                     <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
                 </Card>
 
-                <Card className="max-w-md mx-auto">
-                    <BadgeDelta deltaType="moderateIncrease" isIncreasePositive={true} size="xs">
-                        +12.3%
-                    </BadgeDelta>
-                    <Text>Total des utilisateurs</Text>
-                    <Metric>54</Metric>
+                <Card className="max-w mx-auto">
+                    <Badge icon={StatusOnlineIcon} size="md">
+                        Light Turn On
+                    </Badge>
+                    <Text>Total des utilisateurs </Text>
+                    <Metric>54 </Metric>
                 </Card>
             </Grid>
         </TabPanel>
