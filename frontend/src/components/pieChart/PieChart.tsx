@@ -5,7 +5,7 @@ import s from './PieChart.module.css';
 export const PieChart = () => {
     return (
         <>
-            <Navbar />
+            <Navbar  />
             <BackgroundWrapper>
                 <h1>Salut PieChart</h1>
             </BackgroundWrapper>
