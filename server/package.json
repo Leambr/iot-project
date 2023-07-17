@@ -18,11 +18,11 @@
         "url": "https://github.com/Leambr/iot-project/issues"
     },
     "homepage": "https://github.com/Leambr/iot-project#readme",
-    "type": "module",
     "dependencies": {
         "body-parser": "^1.20.2",
         "dotenv": "^16.3.1",
         "express": "^4.18.2",
+        "mqtt": "^4.3.7",
         "mysql2": "^3.4.2"
     },
     "devDependencies": {
