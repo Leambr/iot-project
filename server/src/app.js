@@ -3,14 +3,15 @@ const morgan = require('morgan');
 const db = require('./config/databaseConfig');
 const app = express();
 const port = 3123;
-const userRouter = require("./routes/userRouter");
-const postRouter = require("./routes/postRouter");
-const roomRouter = require("./routes/roomRouter");
-const authRouter = require("./routes/authRouter");
-const jwtHelper = require("./utils/helper/jwtHelper");
-// const authRouter = require("./routes/authRouter");
+const userRouter = require('./routes/userRouter');
+const postRouter = require('./routes/postRouter');
+const roomRouter = require('./routes/roomRouter');
+const authRouter = require('./routes/authRouter');
+const sensorRouter = require('./routes/sensorRouter');
+const jwtHelper = require('./utils/helper/jwtHelper');
 
 app.use(morgan('dev')).use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // app.use(
 //   cors({
@@ -19,10 +20,9 @@ app.use(morgan('dev')).use(express.json());
 //   })
 // );
 
-
-app.get('/', (req, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
-app.use("/api", authRouter);
-app.use("/api", jwtHelper.authenticateToken, userRouter, postRouter, roomRouter);
+app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
+app.use('/api', authRouter);
+app.use('/api', jwtHelper.authenticateToken, userRouter, postRouter, roomRouter, sensorRouter);
 
 // app.get('/api/users', (req, res) => {
 
@@ -41,7 +41,6 @@ app.use("/api", jwtHelper.authenticateToken, userRouter, postRouter, roomRouter)
 //   });
 // });
 
-
 app.listen(port, () =>
-  console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
+    console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
 );
