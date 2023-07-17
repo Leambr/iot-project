@@ -4,7 +4,7 @@ const db = require('./config/databaseConfig');
 const app = express();
 const port = 3123;
 const userRouter = require('./routes/userRouter');
-const postRouter = require('./routes/postRouter');
+const co2Router = require('./routes/co2Router');
 const roomRouter = require('./routes/roomRouter');
 const authRouter = require('./routes/authRouter');
 const sensorRouter = require('./routes/sensorRouter');
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
-app.use('/api', jwtHelper.authenticateToken, userRouter, postRouter, roomRouter, sensorRouter);
+app.use('/api', jwtHelper.authenticateToken, userRouter, roomRouter, sensorRouter, co2Router);
 
 // app.get('/api/users', (req, res) => {
 
