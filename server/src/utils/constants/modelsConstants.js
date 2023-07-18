@@ -8,3 +8,4 @@ exports.temperatureSensorModel = 'TemperatureSensor';
 exports.roomModel = 'Room';
 exports.userModel = 'User';
 exports.trainingCoursesModel = 'TrainingCourses';
+exports.automationModel = "Automation";
