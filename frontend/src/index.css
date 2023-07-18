@@ -20,6 +20,20 @@ h2 {
     font-weight: 500;
     line-height: normal;
     margin-bottom: 20px;
+    /* font-size: 24px;
+    font-style:normal;
+    font-weight: 100;
+    line-height: normal;
+    margin-bottom: 24px; */
+}
+
+h3 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    margin-bottom: 24px;
 }
 
 /* :root {

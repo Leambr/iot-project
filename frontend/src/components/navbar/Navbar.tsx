@@ -22,8 +22,6 @@ export const Navbar = () => {
         const queryPath = window.location.pathname;
         setActiveIcon(queryPath);
     });
-
-    console.log(activeIcon);
     return (
         <>
             <div className={s.navbarWrapper}>
