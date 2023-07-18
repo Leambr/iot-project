@@ -1,4 +1,4 @@
-import { Tab, TabGroup, TabList, TabPanels, Grid, Col } from '@tremor/react';
+import { Tab, TabGroup, TabList, TabPanels } from '@tremor/react';
 import { BackgroundWrapper } from '../backgroundWrapper/BackgroundWrapper';
 import { Navbar } from '../navbar/Navbar';
 import s from './Dashboard.module.css';

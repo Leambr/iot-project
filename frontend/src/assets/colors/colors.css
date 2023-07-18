@@ -11,9 +11,9 @@
     --yellow-color-secondary: #fee034;
     --yellow-color-tertiary: #fee971;
 
-<<<<<<< HEAD
     --color-ink-white: #fff;
-=======
     --red-callout-color: #be133c;
->>>>>>> 87e52f8 (feat: navbar couleur des icons (wip))
+
+    --green-status: #10b981;
+    --red-status: #fef2f2;
 }

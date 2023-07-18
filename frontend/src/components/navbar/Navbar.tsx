@@ -21,7 +21,8 @@ export const Navbar = () => {
     useEffect(() => {
         const queryPath = window.location.pathname;
         setActiveIcon(queryPath);
-    });
+    }, []);
+
     return (
         <>
             <div className={s.navbarWrapper}>
