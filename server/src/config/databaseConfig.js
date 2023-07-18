@@ -3,10 +3,16 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-
+// const db = mysql.createConnection({
+//     host: 'db-iot',
+//     port: '3306',
+//     user: 'mysql-database',
+//     password: 'password',
+//     database: 'fitness-park-iot',
+// });
 const db = mysql.createConnection({
-    host: 'db-iot',
-    port: '3306',
+    host: 'localhost',
+    port: '6033',
     user: 'mysql-database',
     password: 'password',
     database: 'fitness-park-iot',

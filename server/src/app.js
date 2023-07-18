@@ -8,6 +8,12 @@ const co2Router = require('./routes/co2Router');
 const roomRouter = require('./routes/roomRouter');
 const authRouter = require('./routes/authRouter');
 const sensorRouter = require('./routes/sensorRouter');
+const humidityRouter = require('./routes/humidityRouter');
+const lightRouter = require('./routes/lightRouter');
+const temperatureRouter = require('./routes/temperatureRouter');
+const movingRouter = require('./routes/movingRouter');
+const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
+const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
 
 app.use(morgan('dev')).use(express.json());
@@ -22,7 +28,20 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
-app.use('/api', jwtHelper.authenticateToken, userRouter, roomRouter, sensorRouter, co2Router);
+app.use(
+    '/api',
+    jwtHelper.authenticateToken,
+    userRouter,
+    roomRouter,
+    sensorRouter,
+    co2Router,
+    humidityRouter,
+    lightRouter,
+    temperatureRouter,
+    movingRouter,
+    trainingCoursesRouter,
+    automationRouter
+);
 
 // app.get('/api/users', (req, res) => {
 
@@ -41,6 +60,6 @@ app.use('/api', jwtHelper.authenticateToken, userRouter, roomRouter, sensorRoute
 //   });
 // });
 
-app.listen(port, () => 
+app.listen(port, () =>
     console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
 );
