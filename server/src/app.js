@@ -41,6 +41,6 @@ app.use('/api', jwtHelper.authenticateToken, userRouter, roomRouter, sensorRoute
 //   });
 // });
 
-app.listen(port, () =>
+app.listen(port, () => 
     console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
 );
