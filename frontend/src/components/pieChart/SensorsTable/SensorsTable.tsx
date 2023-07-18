@@ -1,4 +1,5 @@
 import { StatusOnlineIcon, StatusOfflineIcon } from '@heroicons/react/outline';
+import { Switch } from '@mui/material';
 import {
     Badge,
     Card,
@@ -90,6 +91,9 @@ export const SensorsTable = () => {
                                         {item.status}
                                     </Badge>
                                 )}
+                            </TableCell>
+                            <TableCell>
+                                <Switch size="medium" />
                             </TableCell>
                         </TableRow>
                     ))}
