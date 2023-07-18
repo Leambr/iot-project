@@ -14,9 +14,10 @@ RUN npm install
 
 COPY package.json package-lock.json ./
 RUN npm ci
+RUN npm install -g nodemon
 
 COPY . .
 
 EXPOSE 3123
 
-CMD ["node", "app.js"]
+CMD ["npm","run", "dev"]
