@@ -1,4 +1,4 @@
-import { AuthentificationFailed } from '../components/login/types';
+import { AuthentificationFailed } from './types';
 
 export const loginApi = async (username: string, password: string): Promise<any> => {
     await fetch('http://localhost:3123/api/login', {

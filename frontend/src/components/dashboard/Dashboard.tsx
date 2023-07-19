@@ -1,5 +1,5 @@
 import { Tab, TabGroup, TabList, TabPanels } from '@tremor/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchAllRooms } from '../../api/rooms/roomsApi';
 import { BackgroundWrapper } from '../backgroundWrapper/BackgroundWrapper';
 import { Navbar } from '../navbar/Navbar';
@@ -10,15 +10,16 @@ import { CoursPanel } from './panels/CoursPanel';
 import { MachinesPanel } from './panels/MachinesPanel';
 import { MenChangingRoom } from './panels/MenChangingRoom';
 import { WomenChangingRoom } from './panels/WomenChangingRoom';
+import { Room } from '../../api/rooms/types';
 
 export const Dashboard = () => {
-    // const [rooms, setRooms] = useState();
+    const [rooms, setRooms] = useState<Room[]>([]);
 
     useEffect(() => {
         fetchAllRooms()
             .then((roomsData) => {
                 console.log('roomsData', roomsData);
-                // setRooms(roomsData)
+                setRooms(roomsData);
             })
             .catch((error) => {
                 console.error("Une erreur s'est produite :", error);
@@ -34,12 +35,9 @@ export const Dashboard = () => {
                     <h1>Dashboard</h1>
                     <TabGroup>
                         <TabList>
-                            <Tab>Administration</Tab>
-                            <Tab>Machines</Tab>
-                            <Tab>Cours</Tab>
-                            <Tab>Salle abdos</Tab>
-                            <Tab>Vestiaire homme</Tab>
-                            <Tab>Vestiaire femme</Tab>
+                            {rooms.map((room) => (
+                                <Tab>{room.name}</Tab>
+                            ))}
                         </TabList>
                         <TabPanels>
                             <AdminstrationPanel room="Administration" />
