@@ -60,3 +60,12 @@ input::placeholder {
     gap: 10px;
     margin-bottom: 20px;
 }
+
+.errorIsNotActive {
+    display: none;
+}
+
+.errorIsActive {
+    display: block;
+    color: var(--red-callout-color);
+}
