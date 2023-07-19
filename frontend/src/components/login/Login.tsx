@@ -1,19 +1,28 @@
 import { useState } from 'react';
 import s from './Login.module.css';
 import { loginApi } from '../../api/loginApi';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('isNotActive');
 
     const onHandleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        loginApi(username, password);
+        try {
+            await loginApi(username, password);
+            // localStorage.setItem('user', JSON.stringify(response));
+            navigate('/');
+        } catch (error) {
+            setErrorMessage('isActive');
+        }
     };
 
     return (
         <div className={s.loginCard}>
+            <p className={s.error + '' + errorMessage}>Identifiants incorrects</p>
             <form className={s.loginForm} onSubmit={onHandleLogin}>
                 <div>
                     <h2>Login</h2>

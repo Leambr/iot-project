@@ -60,3 +60,11 @@ input::placeholder {
     gap: 10px;
     margin-bottom: 20px;
 }
+
+.error .isNotActive {
+    display: none;
+}
+
+.error .isActive {
+    display: block;
+}

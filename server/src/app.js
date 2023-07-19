@@ -15,16 +15,17 @@ const movingRouter = require('./routes/movingRouter');
 const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
 const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
+const cors = require('cors');
 
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//   })
-// );
+app.use(
+    cors({
+        origin: ['http://localhost'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    })
+);
 
 app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
