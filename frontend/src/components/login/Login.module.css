@@ -61,10 +61,11 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
-.error .isNotActive {
+.errorIsNotActive {
     display: none;
 }
 
-.error .isActive {
+.errorIsActive {
     display: block;
+    color: var(--red-callout-color);
 }

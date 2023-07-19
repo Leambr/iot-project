@@ -7,22 +7,23 @@ export default function Login() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('isNotActive');
+    const [errorMessage, setErrorMessage] = useState(false);
 
     const onHandleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             await loginApi(username, password);
-            // localStorage.setItem('user', JSON.stringify(response));
             navigate('/');
         } catch (error) {
-            setErrorMessage('isActive');
+            setErrorMessage(true);
         }
     };
 
     return (
         <div className={s.loginCard}>
-            <p className={s.error + '' + errorMessage}>Identifiants incorrects</p>
+            <p className={errorMessage ? s.errorIsActive : s.errorIsNotActive}>
+                Identifiants incorrects
+            </p>
             <form className={s.loginForm} onSubmit={onHandleLogin}>
                 <div>
                     <h2>Login</h2>
