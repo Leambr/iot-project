@@ -1,17 +1,14 @@
-import * as React from 'react';
-import s from '../Calendar.module.css';
-import { useEffect, useState } from 'react';
-import Paper from '@mui/material/Paper';
-import { ViewState } from '@devexpress/dx-react-scheduler';
-import { AppointmentModel } from '@devexpress/dx-react-scheduler';
+import { AppointmentModel, ViewState } from '@devexpress/dx-react-scheduler';
 import {
-    Scheduler,
-    MonthView,
-    Toolbar,
-    DateNavigator,
     Appointments,
+    DateNavigator,
+    MonthView,
+    Scheduler,
     TodayButton,
+    Toolbar,
 } from '@devexpress/dx-react-scheduler-material-ui';
+import Paper from '@mui/material/Paper';
+import s from '../Calendar.module.css';
 
 export const CalendarNavigation = () => {
     const appointments: AppointmentModel[] = [

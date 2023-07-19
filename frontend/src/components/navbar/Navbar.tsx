@@ -9,10 +9,7 @@ import { IconWrapper } from '../iconWrapper/IconWrapper';
 
 import s from './Navbar.module.css';
 
-type Navigation = {
-    iconName: string;
-    path: string;
-};
+
 
 export const Navbar = () => {
     const [activeIcon, setActiveIcon] = useState('');

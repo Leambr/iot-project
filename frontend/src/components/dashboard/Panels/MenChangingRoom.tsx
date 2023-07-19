@@ -1,19 +1,10 @@
-import {
-    Callout,
-    Card,
-    Metric,
-    TabPanel,
-    Text,
-    Grid,
-    Flex,
-    CategoryBar,
-    MarkerBar,
-    ProgressBar,
-    Legend,
-    BadgeDelta,
-    Badge,
-} from '@tremor/react';
 import { StatusOnlineIcon } from '@heroicons/react/outline';
+import {
+    Badge, Callout,
+    Card, Grid, Metric,
+    TabPanel,
+    Text
+} from '@tremor/react';
 import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
 type Props = {

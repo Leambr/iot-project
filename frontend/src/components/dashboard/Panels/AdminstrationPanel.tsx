@@ -1,46 +1,10 @@
-import {
-    Callout,
-    Card,
-    Metric,
-    TabPanel,
-    Text,
-    Grid,
-    Flex,
-    CategoryBar,
-    MarkerBar,
-    ProgressBar,
-    Legend,
-    BadgeDelta,
-    Badge,
-    Title,
-    LineChart,
-} from '@tremor/react';
 import { StatusOnlineIcon } from '@heroicons/react/outline';
+import { Badge, Callout, Card, Grid, Metric, TabPanel, Text } from '@tremor/react';
 import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
 type Props = {
     room: string;
 };
-
-const chartdata = [
-    {
-        year: 1972,
-        'Export Growth Rate': 1.96,
-        'Import Growth Rate': 1.61,
-    },
-    {
-        year: 1973,
-        'Export Growth Rate': 1.93,
-        'Import Growth Rate': 1.61,
-    },
-    {
-        year: 1974,
-        'Export Growth Rate': 1.88,
-        'Import Growth Rate': 1.67,
-    },
-    //...
-];
-const dataFormatter = (number: number) => `${Intl.NumberFormat('us').format(number).toString()}%`;
 
 export const AdminstrationPanel = (props: Props) => {
     return (
