@@ -15,7 +15,8 @@ const movingRouter = require('./routes/movingRouter');
 const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
 const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
-const client = require('./config/mqttConfig');
+
+const mqtt = require('./mqtt')
 
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,25 +31,21 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
 app.use(
-    '/api',
-    jwtHelper.authenticateToken,
-    userRouter,
-    roomRouter,
-    sensorRouter,
-    co2Router,
-    humidityRouter,
-    lightRouter,
-    temperatureRouter,
-    movingRouter,
-    trainingCoursesRouter,
-    automationRouter
+  '/api',
+  jwtHelper.authenticateToken,
+  userRouter,
+  roomRouter,
+  sensorRouter,
+  co2Router,
+  humidityRouter,
+  lightRouter,
+  temperatureRouter,
+  movingRouter,
+  trainingCoursesRouter,
+  automationRouter
 );
 
-process.on('SIGINT', () => {
-    client.end();
-    process.exit();
-  });
 
 app.listen(port, () =>
-    console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
+  console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
 );
