@@ -1,0 +1,19 @@
+:root {
+    --black-ink-primary-font: #0000;
+    --black-ink-secondary-font: #3b444b;
+    --black-ink-tertiary-font: #6b7280;
+
+    --grey-color-primary: #cdcdcd;
+    --grey-color-secondary: #e3e3e3;
+    --grey-color-tertiary: #f8f9fa;
+
+    --yellow-color-primary: #fed703;
+    --yellow-color-secondary: #fee034;
+    --yellow-color-tertiary: #fee971;
+
+    --color-ink-white: #fff;
+    --red-callout-color: #be133c;
+
+    --green-status: #10b981;
+    --red-status: #fef2f2;
+}

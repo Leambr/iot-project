@@ -1,0 +1,8 @@
+.backgroundWrapper {
+    width: 100%;
+    overflow: scroll;
+    margin: 1rem;
+    border-radius: 8px;
+    background-color: var(--grey-color-tertiary);
+    padding: 62px 28px;
+}

@@ -29,18 +29,18 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
 app.use(
-  '/api',
-  jwtHelper.authenticateToken,
-  userRouter,
-  roomRouter,
-  sensorRouter,
-  co2Router,
-  humidityRouter,
-  lightRouter,
-  temperatureRouter,
-  movingRouter,
-  trainingCoursesRouter,
-  automationRouter
+    '/api',
+    jwtHelper.authenticateToken,
+    userRouter,
+    roomRouter,
+    sensorRouter,
+    co2Router,
+    humidityRouter,
+    lightRouter,
+    temperatureRouter,
+    movingRouter,
+    trainingCoursesRouter,
+    automationRouter
 );
 
 // app.get('/api/users', (req, res) => {
@@ -61,5 +61,5 @@ app.use(
 // });
 
 app.listen(port, () =>
-  console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
+    console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
 );
