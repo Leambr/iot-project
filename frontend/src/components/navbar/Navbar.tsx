@@ -9,8 +9,6 @@ import { IconWrapper } from '../iconWrapper/IconWrapper';
 
 import s from './Navbar.module.css';
 
-
-
 export const Navbar = () => {
     const [activeIcon, setActiveIcon] = useState('');
     const navigate = useNavigate();
@@ -24,7 +22,7 @@ export const Navbar = () => {
         <>
             <div className={s.navbarWrapper}>
                 <div className={s.navbarFirstContainer}>
-                    <div>
+                    <div onClick={() => navigate('/login')}>
                         <IconWrapper>
                             <Logo />
                         </IconWrapper>
