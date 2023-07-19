@@ -18,8 +18,7 @@ export const loginApi = async (username: string, password: string): Promise<any>
             throw new Error(`Upstream HTTP error: ${response.status} ${response.statusText}`);
         }
         return response.json().then((data) => {
-            localStorage.setItem('user', JSON.stringify(data));
-            
+            localStorage.setItem('user', JSON.stringify(data.token));
         });
     });
 };

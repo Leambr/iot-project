@@ -15,8 +15,14 @@ export const Dashboard = () => {
     // const [rooms, setRooms] = useState();
 
     useEffect(() => {
-        const roomsData = fetchAllRooms();
-        console.log('roomsData', roomsData);
+        fetchAllRooms()
+            .then((roomsData) => {
+                console.log('roomsData', roomsData);
+                // setRooms(roomsData)
+            })
+            .catch((error) => {
+                console.error("Une erreur s'est produite :", error);
+            });
     }, []);
 
     return (
