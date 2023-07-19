@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+// ----- Config for docker -----
 // const db = mysql.createConnection({
 //     host: 'db-iot',
 //     port: '3306',
@@ -10,6 +11,8 @@ dotenv.config();
 //     password: 'password',
 //     database: 'fitness-park-iot',
 // });
+
+// ----- Config for local -----
 const db = mysql.createConnection({
     host: 'localhost',
     port: '6033',

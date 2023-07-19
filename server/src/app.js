@@ -15,6 +15,7 @@ const movingRouter = require('./routes/movingRouter');
 const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
 const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
+const client = require('./config/mqttConfig');
 
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,22 +44,10 @@ app.use(
     automationRouter
 );
 
-// app.get('/api/users', (req, res) => {
-
-//   res.setHeader('Content-Type', 'application/json');
-//   const SelectQuery = 'SELECT * FROM users';
-//   db.query(SelectQuery, (err, result) => {
-//     console.log('/api/users');
-
-//     if (err) {
-//       console.log('if error', err);
-//       res.send(err);
-//     } else {
-//       console.log('else result', result);
-//       res.send(result);
-//     }
-//   });
-// });
+process.on('SIGINT', () => {
+    client.end();
+    process.exit();
+  });
 
 app.listen(port, () =>
     console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)
