@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `light_sensor` (
 	`sensor_id` INT,
 	`room_id` CHAR(50),
 	`luminosity` INT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_light_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_light_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `moving_sensor` (
 	`sensor_id` INT,
 	`room_id` CHAR(50),
 	`is_moving` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_moving_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_moving_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `temperature_sensor` (
 	`sensor_id` INT,
 	`room_id` CHAR(50),
 	`temperature` FLOAT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_temperature_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_temperature_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `humidity_sensor` (
 	`sensor_id` INT,
 	`room_id` CHAR(50),
 	`humidity` FLOAT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_humidity_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_humidity_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `co2_sensor` (
 	`sensor_id` INT,
 	`room_id` CHAR(50),
 	`co2` INT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_co2_sensor_room FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_co2_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

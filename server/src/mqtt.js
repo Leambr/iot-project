@@ -18,12 +18,12 @@ client.on('message', (topic, message) => {
 
         case 118:
             sensorTable = table.light_sensor
-
             lightService.insertData(data, sensorTable)
             break
 
         case 112:
             sensorTable = table.temperature_sensor
+
             temperatureService.insertData(data, sensorTable)
             break
 
