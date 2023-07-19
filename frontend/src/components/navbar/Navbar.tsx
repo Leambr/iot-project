@@ -22,15 +22,17 @@ export const Navbar = () => {
         <>
             <div className={s.navbarWrapper}>
                 <div className={s.navbarFirstContainer}>
-                    <div onClick={() => navigate('/login')}>
+                    <div onClick={() => navigate('/')}>
                         <IconWrapper>
                             <Logo />
                         </IconWrapper>
                     </div>
                     <div className={s.menuIcons}>
-                        <div className={s.dashboardIcon} onClick={() => navigate('/')}>
+                        <div className={s.dashboardIcon} onClick={() => navigate('/dashboard')}>
                             <IconWrapper>
-                                <DashboardIcon color={activeIcon === '/' ? '#fed703' : '#3B444B'} />
+                                <DashboardIcon
+                                    color={activeIcon === '/dashboard' ? '#fed703' : '#3B444B'}
+                                />
                             </IconWrapper>
                         </div>
                         <div className={s.calendar} onClick={() => navigate('/calendar')}>

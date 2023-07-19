@@ -1,4 +1,6 @@
 import { Tab, TabGroup, TabList, TabPanels } from '@tremor/react';
+import { useEffect } from 'react';
+import { fetchAllRooms } from '../../api/rooms/roomsApi';
 import { BackgroundWrapper } from '../backgroundWrapper/BackgroundWrapper';
 import { Navbar } from '../navbar/Navbar';
 import s from './Dashboard.module.css';
@@ -10,6 +12,13 @@ import { MenChangingRoom } from './panels/MenChangingRoom';
 import { WomenChangingRoom } from './panels/WomenChangingRoom';
 
 export const Dashboard = () => {
+    // const [rooms, setRooms] = useState();
+
+    useEffect(() => {
+        const roomsData = fetchAllRooms();
+        console.log('roomsData', roomsData);
+    }, []);
+
     return (
         <>
             <Navbar />

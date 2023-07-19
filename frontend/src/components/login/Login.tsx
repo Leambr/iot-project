@@ -13,7 +13,7 @@ export default function Login() {
         e.preventDefault();
         try {
             await loginApi(username, password);
-            navigate('/');
+            navigate('/dashboard');
         } catch (error) {
             setErrorMessage(true);
         }
