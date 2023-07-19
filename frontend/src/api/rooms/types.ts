@@ -1,7 +1,8 @@
 import { UnauthorizedResponse } from '../../utils/types';
 
 export type Room = {
-    id: number;
+    room_name: string;
+    id: string;
     name: string;
 };
 
