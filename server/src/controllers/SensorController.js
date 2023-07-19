@@ -11,6 +11,13 @@ const sensorController = {
             res.status(500).json({ error: error.message });
         }
     },
+
+    // insertSensor: async (req, res) => {
+
+    //     try {
+
+    //     }
+    // }
 };
 
 module.exports = sensorController;
