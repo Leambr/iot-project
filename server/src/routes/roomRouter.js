@@ -7,4 +7,5 @@ const router = new express.Router();
 
 router.get('/rooms', roomController.getAllRooms)
 router.get('/room/:id', roomController.getRoomById)
+router.get('/room/sensors/:roomId', roomController.getSensorsByRoomId)
 module.exports = router;
