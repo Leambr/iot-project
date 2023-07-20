@@ -43,7 +43,7 @@ export const CalendarNavigation = () => {
         {
             startDate: '2023-07-13T09:00',
             endDate: '2023-07-13T10:30',
-            title: 'Pilatte',
+            title: 'Pilâte',
             id: 3,
             humidity: '14%',
             luminosity: '0%',
@@ -59,39 +59,6 @@ export const CalendarNavigation = () => {
             temperature: '22.5°C',
         },
     ];
-
-    // const automation = [
-    //     {
-    //         id: 0,
-    //         humidity: '24%',
-    //         luminosity: '30%',
-    //         temperature: '18°C',
-    //     },
-    //     {
-    //         id: 1,
-    //         humidity: '23.5%',
-    //         luminosity: '20%',
-    //         temperature: '20°C',
-    //     },
-    //     {
-    //         id: 2,
-    //         humidity: '20.4%',
-    //         luminosity: '10%',
-    //         temperature: '22°C',
-    //     },
-    //     {
-    //         id: 3,
-    //         humidity: '30%',
-    //         luminosity: '20%',
-    //         temperature: '22.5°C',
-    //     },
-    //     {
-    //         id: 4,
-    //         humidity: '14%',
-    //         luminosity: '0%',
-    //         temperature: '18°C',
-    //     },
-    // ];
 
     const [selectedAppointment, setSelectedAppointment] = useState<AppointmentModel | null>(null);
 

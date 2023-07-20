@@ -12,7 +12,7 @@ export const CoursPanel = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">788.2</Metric>
+                    <Metric className="text-black">188.2</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -27,10 +27,10 @@ export const CoursPanel = (props: Props) => {
                     <Metric className="text-black">12%</Metric>
                     <Callout
                         className="h-24 mt-4"
-                        title="Attention au taux important d'humiditié dans l'air."
-                        color="orange"
+                        title="Humiditié dans l'air correct."
+                        color="green"
                     >
-                        Régulerez l'aération de la salle.
+                        Aucune intervention à faire.
                     </Callout>
                 </Card>
 
