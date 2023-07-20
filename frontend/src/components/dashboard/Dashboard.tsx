@@ -2,12 +2,12 @@ import { Tab, TabGroup, TabList, TabPanels } from '@tremor/react';
 import { BackgroundWrapper } from '../backgroundWrapper/BackgroundWrapper';
 import { Navbar } from '../navbar/Navbar';
 import s from './Dashboard.module.css';
-import { AbdosRoomPanel } from './panel/AbdosRoomPanel';
-import { AdminstrationPanel } from './panel/AdminstrationPanel';
-import { CoursPanel } from './panel/CoursPanel';
-import { MachinesPanel } from './panel/MachinesPanel';
-import { MenChangingRoom } from './panel/MenChangingRoom';
-import { WomenChangingRoom } from './panel/WomenChangingRoom';
+import { AbdosRoomPanel } from './panels/AbdosRoomPanel';
+import { AdminstrationPanel } from './panels/AdminstrationPanel';
+import { CoursPanel } from './panels/CoursPanel';
+import { MachinesPanel } from './panels/MachinesPanel';
+import { MenChangingRoom } from './panels/MenChangingRoom';
+import { WomenChangingRoom } from './panels/WomenChangingRoom';
 
 export const Dashboard = () => {
     return (
