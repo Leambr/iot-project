@@ -16,8 +16,7 @@ import { Sensor } from '../../api/sensors/types';
 
 export const Dashboard = () => {
     const [rooms, setRooms] = useState<Room[]>([]);
-    const [sensorsData, setSensorData] = useState<Sensor[]>([]);
-    console.log('sensorsData', sensorsData);
+    const [sensorData, setSensorData] = useState<Sensor[]>([]);
 
     useEffect(() => {
         fetchAllRooms()
@@ -30,14 +29,20 @@ export const Dashboard = () => {
     }, []);
 
     useEffect(() => {
-        fetchSensorsByRoomId('82710134-af42-4601-a129-0975b48a0e5c')
-            .then((sensorsData) => {
-                setSensorData(sensorsData);
-            })
-            .catch((error) => {
-                console.error("Une erreur s'est produite :", error);
-            });
-    }, []);
+        let sensorDataArray = sensorData;
+        rooms.map((room) => {
+            console.log('room 2ème useEffect', rooms);
+            fetchSensorsByRoomId(room.id)
+                .then((sensorsData) => {
+                    sensorDataArray.push(sensorsData);
+                })
+                .catch((error) => {
+                    console.error("Une erreur s'est produite :", error);
+                });
+        });
+
+        setSensorData(sensorDataArray);
+    }, [rooms]);
 
     return (
         <>
@@ -54,7 +59,7 @@ export const Dashboard = () => {
                         </TabList>
                         {rooms.length > 0 ? (
                             <TabPanels>
-                                <AdminstrationPanel room={'Administration'} />
+                                <AdminstrationPanel room="Administration" />
                                 <MachinesPanel room="Machines" />
                                 <CoursPanel room="Cours" />
                                 <AbdosRoomPanel room="Salle Abdos" />

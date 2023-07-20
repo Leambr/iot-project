@@ -1,9 +1,14 @@
 import { StatusOnlineIcon } from '@heroicons/react/outline';
 import {
-    Badge, Callout,
-    Card, CategoryBar, Flex, Grid, Metric,
+    Badge,
+    Callout,
+    Card,
+    CategoryBar,
+    Flex,
+    Grid,
+    Metric,
     TabPanel,
-    Text
+    Text,
 } from '@tremor/react';
 import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
@@ -57,13 +62,19 @@ export const MachinesPanel = (props: Props) => {
                     <InputCardRange
                         title="Luminosité"
                         room={props.room}
+                        value={10}
                         mesure="%"
                         stepRange={10}
                     />
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange
+                        title="Ventilation"
+                        value={22.4}
+                        room={props.room}
+                        mesure="°C"
+                    />
                 </Card>
 
                 <Card className="max-w mx-auto">

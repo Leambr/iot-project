@@ -17,7 +17,7 @@ export const WomenChangingRoom = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">18.4 KWh</Metric>
+                    <Metric className="text-black">876.3 KWh</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -29,7 +29,7 @@ export const WomenChangingRoom = (props: Props) => {
 
                 <Card className="max-w mx-auto">
                     <Text>Humidité actuelle : {props.room}</Text>
-                    <Metric className="text-black">24%</Metric>
+                    <Metric className="text-black">21.4%</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="Attention au taux important d'humiditié dans l'air."
@@ -40,7 +40,7 @@ export const WomenChangingRoom = (props: Props) => {
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange title="Ventilation" value={20.44} room={props.room} mesure="°C" />
                 </Card>
 
                 <Card className="max-w mx-auto">
@@ -48,7 +48,7 @@ export const WomenChangingRoom = (props: Props) => {
                         Light Turn On
                     </Badge>
                     <Text>Total des utilisateurs </Text>
-                    <Metric>54 </Metric>
+                    <Metric>6 </Metric>
                 </Card>
             </Grid>
         </TabPanel>

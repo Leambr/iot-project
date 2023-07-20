@@ -12,7 +12,7 @@ export const AdminstrationPanel = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">18.4 KWh</Metric>
+                    <Metric className="text-black">900 KWh</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -39,12 +39,13 @@ export const AdminstrationPanel = (props: Props) => {
                         title="Luminosité"
                         room={props.room}
                         mesure="%"
+                        value={30}
                         stepRange={10}
                     />
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange title="Ventilation" value={22} room={props.room} mesure="°C" />
                 </Card>
 
                 <Card className="max-w mx-auto">
@@ -52,7 +53,7 @@ export const AdminstrationPanel = (props: Props) => {
                         Light Turn On
                     </Badge>
                     <Text>Total des utilisateurs </Text>
-                    <Metric>54 </Metric>
+                    <Metric>4 </Metric>
                 </Card>
             </Grid>
         </TabPanel>

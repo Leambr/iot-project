@@ -6,10 +6,11 @@ type Props = {
     room: string;
     stepRange?: number;
     mesure: string;
+    value: number;
 };
 
 export const InputCardRange = (props: Props) => {
-    const [inputRange, setInputRange] = useState('20');
+    const [inputRange, setInputRange] = useState(`${props.value}`);
     const handleInputRange = (event: React.ChangeEvent<HTMLInputElement>) => {
         // ajouter async post
         setInputRange(event.target.value);
