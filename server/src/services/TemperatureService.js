@@ -1,32 +1,26 @@
-const GlobalService = require("./GlobalService");
-const table = require("../utils/constants/tablesConstants");
-const model = require("../utils/constants/modelsConstants");
-const db = require("../config/databaseConfig");
+const GlobalService = require('./GlobalService');
+const table = require('../utils/constants/tablesConstants');
+const model = require('../utils/constants/modelsConstants');
+const db = require('../config/databaseConfig');
 
 const temperatureService = {
-
     getAllTemperature: async () => {
         try {
             console.log('service');
             const query = `SELECT * FROM ${table.temperature_sensor}`;
             const result = await GlobalService.getAll(query, model.temperatureSensorModel);
             return result;
-        }
-        catch (error) {
-
+        } catch (error) {
             throw error;
         }
     },
 
     getTemperatureById: async (id) => {
         try {
-
             const query = `SELECT * FROM ${table.temperature_sensor} WHERE id = ${id}`;
             const result = await GlobalService.getById(query, model.temperatureSensorModel);
             return result;
-        }
-        catch (error) {
-
+        } catch (error) {
             throw error;
         }
     },
@@ -37,41 +31,33 @@ const temperatureService = {
                 const query = `SELECT * FROM ${table.temperature_sensor} WHERE sensor_id = '${id}'`;
                 db.query(query, (error, result) => {
                     if (error || result.length === 0) {
-                        reject(new Error("Capteur inexistante."));
+                        reject(new Error('Capteur inexistante.'));
                     } else {
                         resolve(result);
                     }
                 });
             });
         } catch (error) {
-
             throw error;
         }
     },
-    insertData: async (data, table) => {
-
+    insertData: async (nodeId, source_address, data) => {
         try {
-
             return new Promise((resolve, reject) => {
-                const query = `INSERT INTO ${table} (sensor_id, room_id, temperature) VALUES (${data.sensor_id}, '${data.source_address}', ${data.data.temperature})`;
+                const query = `INSERT INTO ${table.temperature_sensor} (sensor_id, room_id, temperature) VALUES ('${nodeId}', '${source_address}', ${data})`;
                 db.query(query, data, (error, result) => {
-
                     if (error) {
                         console.log(error);
-                        reject(new Error("Capteur inexistante."));
+                        reject(new Error('Capteur inexistante.'));
                     } else {
                         resolve(result);
                     }
                 });
             });
-
-        }
-        catch (error) {
-
+        } catch (error) {
             throw error;
         }
-    }
-
+    },
 };
 
 module.exports = temperatureService;

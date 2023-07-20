@@ -9,7 +9,7 @@ const roomRouter = require('./routes/roomRouter');
 const authRouter = require('./routes/authRouter');
 const sensorRouter = require('./routes/sensorRouter');
 const humidityRouter = require('./routes/humidityRouter');
-const lightRouter = require('./routes/lightRouter');
+const luminosityRouter = require('./routes/luminosityRouter');
 const temperatureRouter = require('./routes/temperatureRouter');
 const movingRouter = require('./routes/movingRouter');
 const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
@@ -38,7 +38,7 @@ app.use(
     sensorRouter,
     co2Router,
     humidityRouter,
-    lightRouter,
+    luminosityRouter,
     temperatureRouter,
     movingRouter,
     trainingCoursesRouter,

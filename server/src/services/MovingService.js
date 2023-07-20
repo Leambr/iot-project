@@ -40,29 +40,23 @@ const movingService = {
             throw error;
         }
     },
-    insertData: async (data, table) => {
-
+    insertData: async (nodeId, source_address, data) => {
         try {
-
             return new Promise((resolve, reject) => {
-                const query = `INSERT INTO ${table} (sensor_id, room_id, is_moving) VALUES (${data.sensor_id}, '${data.source_address}', ${data.data.motion})`;
+                const query = `INSERT INTO ${table.moving_sensor} (sensor_id, room_id, is_moving) VALUES ('${nodeId}', '${source_address}', ${data})`;
                 db.query(query, data, (error, result) => {
-
                     if (error) {
                         console.log(error);
-                        reject(new Error("Capteur inexistante."));
+                        reject(new Error('Capteur inexistante.'));
                     } else {
                         resolve(result);
                     }
                 });
             });
-
-        }
-        catch (error) {
-
+        } catch (error) {
             throw error;
         }
-    }
+    },
 };
 
 module.exports = movingService;

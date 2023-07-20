@@ -212,17 +212,17 @@ INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES
 ('ab4068f6-5524-4470-a344-dd602840b44d', 'Vent', '82710134-af42-4601-a129-0975b48a0e5c'),
 ('a726023d-cb13-48f0-a693-93fb0a596e0b', 'Heat', '82710134-af42-4601-a129-0975b48a0e5c');
 -- dd943e23-4e89-4333-860e-c66483d3e624
-INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES 
-('16fe3b26-2516-4eff-9401-d92fe9f14e87', 'Co2', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
-('0bfd7d5b-47b0-43a6-9be2-47e1c1d7a07a', 'Luminosity', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
-('73b6396b-7bc3-4df5-ba78-2ce972422fd7', 'Temperature', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
-('886d0035-51d6-435c-b230-58f8fba76ce6', 'Motion', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
-('cfacfa06-955e-4fb2-8875-0cfb44b78d41', 'Humidity', 'dd943e23-4e89-4333-860e-c66483d3e624'),
-('9fe9812c-76ec-4a58-83bb-957c1ee6fb70', 'Voltage', 'dd943e23-4e89-4333-860e-c66483d3e624'),
-('91d19ebf-4c0f-44b0-8252-7e48f85f295c', 'Person', 'dd943e23-4e89-4333-860e-c66483d3e624'),
-('97215733-8e88-4d93-b923-ae9c43de1ee8', 'Light', 'dd943e23-4e89-4333-860e-c66483d3e624'),
-('6faa6895-4e19-418b-9462-1ba64a038fbb', 'Vent', 'dd943e23-4e89-4333-860e-c66483d3e624'),
-('3e2099af-6571-44c3-bb79-4f6d0a33eb75', 'Heat', 'dd943e23-4e89-4333-860e-c66483d3e624');
+-- INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES 
+-- ('16fe3b26-2516-4eff-9401-d92fe9f14e87', 'Co2', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
+-- ('0bfd7d5b-47b0-43a6-9be2-47e1c1d7a07a', 'Luminosity', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
+-- ('73b6396b-7bc3-4df5-ba78-2ce972422fd7', 'Temperature', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('886d0035-51d6-435c-b230-58f8fba76ce6', 'Motion', 'dd943e23-4e89-4333-860e-c66483d3e624'), 
+-- ('cfacfa06-955e-4fb2-8875-0cfb44b78d41', 'Humidity', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('9fe9812c-76ec-4a58-83bb-957c1ee6fb70', 'Voltage', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('91d19ebf-4c0f-44b0-8252-7e48f85f295c', 'Person', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('97215733-8e88-4d93-b923-ae9c43de1ee8', 'Light', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('6faa6895-4e19-418b-9462-1ba64a038fbb', 'Vent', 'dd943e23-4e89-4333-860e-c66483d3e624'),
+-- ('3e2099af-6571-44c3-bb79-4f6d0a33eb75', 'Heat', 'dd943e23-4e89-4333-860e-c66483d3e624');
 
 -- INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (112, 'Temperature', 'dd943e23-4e89-4333-860e-c66483d3e624'), (115, 'Motion', 'dd943e23-4e89-4333-860e-c66483d3e624'), (114, 'Humidity', 'dd943e23-4e89-4333-860e-c66483d3e624');
 -- INSERT INTO `sensor` (`id`, `type`, `room_id`) VALUES (112, 'Temperature', '9fa47c36-e52f-4698-b655-f7d5a8ce80a1'), (115, 'Motion', '9fa47c36-e52f-4698-b655-f7d5a8ce80a1'), (114, 'Humidity', '9fa47c36-e52f-4698-b655-f7d5a8ce80a1');
