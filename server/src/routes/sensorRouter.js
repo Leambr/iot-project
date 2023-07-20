@@ -4,6 +4,6 @@ const jwtHelper = require('../utils/helper/jwtHelper');
 
 const router = new express.Router();
 
-router.get('/getAllSensorsByRoomId/:id', sensorController.getSensorsByRoomId);
+router.get('/sensorsByRoomsId/:id', sensorController.getSensorsByRoomId);
 
 module.exports = router;

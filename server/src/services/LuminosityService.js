@@ -3,31 +3,31 @@ const table = require('../utils/constants/tablesConstants');
 const model = require('../utils/constants/modelsConstants');
 const db = require('../config/databaseConfig');
 
-const co2Service = {
-    getAllCo2: async () => {
+const luminosityService = {
+    getAllLuminosity: async () => {
         try {
-            const query = `SELECT * FROM ${table.co2_sensor}`;
-            const result = await GlobalService.getAll(query, model.co2SensorModel);
+            const query = `SELECT * FROM ${table.luminosity_sensor} WHERE`;
+            const result = await GlobalService.getAll(query, model.luminositySensorModel);
             return result;
         } catch (error) {
             throw error;
         }
     },
 
-    getCo2ById: async (id) => {
+    getLuminosityById: async (id) => {
         try {
-            const query = `SELECT * FROM ${table.co2_sensor} WHERE id = ${id}`;
-            const result = await GlobalService.getById(query, model.co2SensorModel);
+            const query = `SELECT * FROM ${table.luminosity_sensor} WHERE id = ${id}`;
+            const result = await GlobalService.getById(query, model.luminositySensorModel);
             return result;
         } catch (error) {
             throw error;
         }
     },
 
-    getCo2BySensorId: async (id) => {
+    getLuminosityBySensorId: async (id) => {
         try {
             return new Promise((resolve, reject) => {
-                const query = `SELECT * FROM ${table.co2_sensor} WHERE sensor_id = '${id}'`;
+                const query = `SELECT * FROM ${table.luminosity_sensor} WHERE sensor_id = '${id}'`;
                 db.query(query, (error, result) => {
                     if (error || result.length === 0) {
                         reject(new Error('Capteur inexistante.'));
@@ -43,7 +43,7 @@ const co2Service = {
     insertData: async (nodeId, source_address, data) => {
         try {
             return new Promise((resolve, reject) => {
-                const query = `INSERT INTO ${table.co2_sensor} (sensor_id, room_id, co2) VALUES ('${nodeId}', '${source_address}', ${data})`;
+                const query = `INSERT INTO ${table.luminosity_sensor} (sensor_id, room_id, luminosity) VALUES ('${nodeId}', '${source_address}', ${data})`;
                 db.query(query, data, (error, result) => {
                     if (error) {
                         console.log(error);
@@ -59,4 +59,4 @@ const co2Service = {
     },
 };
 
-module.exports = co2Service;
+module.exports = luminosityService;
