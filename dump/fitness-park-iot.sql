@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `luminosity_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`luminosity` INT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_luminosity_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_luminosity_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `moving_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`is_moving` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_moving_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_moving_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `temperature_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`temperature` FLOAT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_temperature_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_temperature_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `humidity_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`humidity` FLOAT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_humidity_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_humidity_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `co2_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`co2` INT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_co2_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_co2_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `voltage_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`kwh` INT,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_voltage_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_voltage_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `person_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`person` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_person_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_person_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `light_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`is_light` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_light_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_light_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `vent_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`is_vent` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_vent_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_vent_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `heat_sensor` (
 	`sensor_id` VARCHAR(100),
 	`room_id` VARCHAR(100),
 	`is_heat` BOOLEAN,
-	`date` DATETIME,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_heat_sensor FOREIGN KEY (sensor_id) REFERENCES sensor(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT fk_heat_room_sensor FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

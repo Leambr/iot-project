@@ -17,6 +17,8 @@ const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
 const cors = require('cors');
 
+const mqtt = require('./mqtt');
+
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,7 +33,6 @@ app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
 app.use(
     '/api',
-    // jwtHelper.authenticateToken,
     userRouter,
     roomRouter,
     sensorRouter,
@@ -43,23 +44,6 @@ app.use(
     trainingCoursesRouter,
     automationRouter
 );
-
-// app.get('/api/users', (req, res) => {
-
-//   res.setHeader('Content-Type', 'application/json');
-//   const SelectQuery = 'SELECT * FROM users';
-//   db.query(SelectQuery, (err, result) => {
-//     console.log('/api/users');
-
-//     if (err) {
-//       console.log('if error', err);
-//       res.send(err);
-//     } else {
-//       console.log('else result', result);
-//       res.send(result);
-//     }
-//   });
-// });
 
 app.listen(port, () =>
     console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)

@@ -48,6 +48,29 @@ const temperatureService = {
             throw error;
         }
     },
+    insertData: async (data, table) => {
+
+        try {
+
+            return new Promise((resolve, reject) => {
+                const query = `INSERT INTO ${table} (sensor_id, room_id, temperature) VALUES (${data.sensor_id}, '${data.source_address}', ${data.data.temperature})`;
+                db.query(query, data, (error, result) => {
+
+                    if (error) {
+                        console.log(error);
+                        reject(new Error("Capteur inexistante."));
+                    } else {
+                        resolve(result);
+                    }
+                });
+            });
+
+        }
+        catch (error) {
+
+            throw error;
+        }
+    }
 
 };
 
