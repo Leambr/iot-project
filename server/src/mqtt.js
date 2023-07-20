@@ -52,7 +52,7 @@ client.on('message', (topic, message) => {
         case 131:
             //     sensorTable = table.co2_sensor;
 
-            console.log('co2 ', dataObj);
+            // console.log('co2 ', dataObj);
             co2Service.insertData(dataArray[3], dataObj.source_address, dataObj.data.co2);
         //     break;
 
