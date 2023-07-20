@@ -1,6 +1,6 @@
 export const fetchSensorsByRoomId = (room_id: string) => {
     const token = localStorage.getItem('user');
-    const url = import.meta.env.VITE_IOT_URL + `allSensorsByRoom/${room_id}`;
+    const url = `http://localhost:3123/api/mqttSensorsDataByRoomId/${room_id}`;
 
     return fetch(url, {
         method: 'GET',

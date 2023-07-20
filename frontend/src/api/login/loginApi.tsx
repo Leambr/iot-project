@@ -1,7 +1,7 @@
 import { AuthentificationFailed } from './types';
 
 export const loginApi = async (username: string, password: string): Promise<any> => {
-    const url = import.meta.env.VITE_IOT_URL + 'login';
+    const url = 'http://localhost:3123/api/login';
     await fetch(url, {
         method: 'POST',
         headers: {

@@ -17,9 +17,7 @@ import { Sensor } from '../../api/sensors/types';
 export const Dashboard = () => {
     const [rooms, setRooms] = useState<Room[]>([]);
     const [sensorsData, setSensorData] = useState<Sensor[]>([]);
-    console.log(sensorsData);
-
-    console.log(rooms);
+    console.log('sensorsData', sensorsData);
 
     useEffect(() => {
         fetchAllRooms()
@@ -32,7 +30,7 @@ export const Dashboard = () => {
     }, []);
 
     useEffect(() => {
-        fetchSensorsByRoomId('114')
+        fetchSensorsByRoomId('82710134-af42-4601-a129-0975b48a0e5c')
             .then((sensorsData) => {
                 setSensorData(sensorsData);
             })
