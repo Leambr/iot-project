@@ -18,8 +18,6 @@ const jwtHelper = require('./utils/helper/jwtHelper');
 
 const mqtt = require('./mqtt')
 
-const mqtt = require('./mqtt')
-
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

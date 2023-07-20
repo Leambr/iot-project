@@ -6,7 +6,7 @@ const temperatureService = require("./services/TemperatureService")
 const co2Service = require("./services/Co2Service")
 const lightService = require("./services/LightService")
 const movingService = require("./services/MovingService")
-const { tempAutomation } = require('./utils/automation')
+const { tempAutomation, lightAutomation } = require('./utils/automation')
 
 client.subscribe('groupe5/#')
 
@@ -38,6 +38,8 @@ client.on('message', (topic, message) => {
         case 115:
             sensorTable = table.moving_sensor
             movingService.insertData(data, sensorTable)
+
+            lightAutomation(data)
             break
 
         case 131:
