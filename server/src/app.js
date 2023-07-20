@@ -31,7 +31,7 @@ app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
 app.use(
     '/api',
-    jwtHelper.authenticateToken,
+    // jwtHelper.authenticateToken,
     userRouter,
     roomRouter,
     sensorRouter,
