@@ -1,7 +1,8 @@
 export const fetchSensorsByRoomId = (room_id: string) => {
     const token = localStorage.getItem('user');
+    const url = import.meta.env.VITE_IOT_URL + `allSensorsByRoom/${room_id}`;
 
-    return fetch(`http://localhost:3123/api/getAllSensorsByRoomId/${room_id}`, {
+    return fetch(url, {
         method: 'GET',
         headers: {
             Accept: 'application/json',

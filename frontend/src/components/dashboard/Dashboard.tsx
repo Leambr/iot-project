@@ -17,6 +17,9 @@ import { Sensor } from '../../api/sensors/types';
 export const Dashboard = () => {
     const [rooms, setRooms] = useState<Room[]>([]);
     const [sensorsData, setSensorData] = useState<Sensor[]>([]);
+    console.log(sensorsData);
+
+    console.log(rooms);
 
     useEffect(() => {
         fetchAllRooms()
@@ -30,8 +33,8 @@ export const Dashboard = () => {
 
     useEffect(() => {
         fetchSensorsByRoomId('114')
-            .then((sensorData) => {
-                setSensorData(sensorData);
+            .then((sensorsData) => {
+                setSensorData(sensorsData);
             })
             .catch((error) => {
                 console.error("Une erreur s'est produite :", error);
@@ -53,10 +56,7 @@ export const Dashboard = () => {
                         </TabList>
                         {rooms.length > 0 ? (
                             <TabPanels>
-                                {/* j'ai slice à 4 pour obtenir les données de la salle Administration qui est à l'index 4 de l'array sensorsData */}
-                                {sensorsData.slice(4).map((data) => (
-                                    <AdminstrationPanel room={data.room_name} />
-                                ))}
+                                <AdminstrationPanel room={'Administration'} />
                                 <MachinesPanel room="Machines" />
                                 <CoursPanel room="Cours" />
                                 <AbdosRoomPanel room="Salle Abdos" />

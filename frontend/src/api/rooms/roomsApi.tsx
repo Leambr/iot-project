@@ -1,7 +1,8 @@
 export const fetchAllRooms = () => {
     const token = localStorage.getItem('user');
+    const url = import.meta.env.VITE_IOT_URL + 'rooms';
 
-    return fetch(`http://localhost:3123/api/rooms`, {
+    return fetch(url, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
