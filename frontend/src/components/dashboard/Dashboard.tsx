@@ -53,22 +53,23 @@ export const Dashboard = () => {
                     <h1>Dashboard</h1>
                     <TabGroup>
                         <TabList>
-                            {rooms.map((room) => (
-                                <Tab>{room.name}</Tab>
-                            ))}
+                            <Tab> Administration </Tab>
+                            <Tab> Machines </Tab>
+                            <Tab> Cours </Tab>
+                            <Tab> Salle Abdos </Tab>
+                            <Tab> Vestiaire Homme </Tab>
+                            <Tab> Vestiaire Femme </Tab>
                         </TabList>
-                        {rooms.length > 0 ? (
-                            <TabPanels>
-                                <AdminstrationPanel room="Administration" />
-                                <MachinesPanel room="Machines" />
-                                <CoursPanel room="Cours" />
-                                <AbdosRoomPanel room="Salle Abdos" />
-                                <MenChangingRoom room="Vestiaire Homme" />
-                                <WomenChangingRoom room="Vestiaire Femme" />
-                            </TabPanels>
-                        ) : (
-                            <p>Chargement en cours...</p>
-                        )}
+
+                        <TabPanels>
+                            <AdminstrationPanel room="Administration" />
+
+                            <MachinesPanel room="Machines" />
+                            <CoursPanel room="Cours" />
+                            <AbdosRoomPanel room="Salle Abdos" />
+                            <MenChangingRoom room="Vestiaire Homme" />
+                            <WomenChangingRoom room="Vestiaire Femme" />
+                        </TabPanels>
                     </TabGroup>
                 </div>
             </BackgroundWrapper>
