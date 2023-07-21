@@ -1,5 +1,6 @@
 import { StatusOnlineIcon, StatusOfflineIcon } from '@heroicons/react/outline';
 import { Switch } from '@mui/material';
+import s from '../PieChart.module.css';
 import {
     Badge,
     Card,
@@ -12,14 +13,16 @@ import {
     Title,
     Text,
 } from '@tremor/react';
+import { useState } from 'react';
 
 export const SensorsTable = () => {
+    const [switchState, setSwitchState] = useState(true);
     const data = [
         {
             id: '9fa47c36-e52f-4698-b655-f7d5a8ce80a1',
             type: 'Température',
             salle: 'Administration',
-            status: 'actif',
+            status: switchState,
         },
         {
             id: '82710134-af42-4601-a129-0975b48a0e5c',
@@ -31,7 +34,7 @@ export const SensorsTable = () => {
             id: '09fc90fc-4d2c-4bc8-bfcb-6b44bfb92302',
             type: 'Température',
             salle: 'Vestiaire Homme',
-            status: 'actif',
+            status: 'active',
         },
         {
             id: 'dd943e23-4e89-4333-860e-c66483d3e624',
@@ -79,7 +82,7 @@ export const SensorsTable = () => {
             id: '93c76f4b-ab2b-422e-81fb-afac6eff8af8',
             type: 'Luminosité',
             salle: 'Salle de cours',
-            status: 'actif',
+            status: 'active',
         },
         {
             id: '44ef0e92-74ac-42f8-b2a6-ac37dbc149eb',
@@ -88,6 +91,10 @@ export const SensorsTable = () => {
             status: 'active',
         },
     ];
+
+    const handleSwitchButton = (e: any) => {
+        setSwitchState(e.target.checked);
+    };
     return (
         <Card>
             <Title>Liste des capteurs et dispositifs</Title>
@@ -111,19 +118,23 @@ export const SensorsTable = () => {
                             <TableCell>
                                 <Text>{item.salle}</Text>
                             </TableCell>
-                            <TableCell>
-                                {item.status === 'inactif' ? (
+                            <TableCell className={s.widthColumn}>
+                                {item.status === false || item.status === 'inactive' ? (
                                     <Badge color="rose" icon={StatusOfflineIcon}>
-                                        {item.status}
+                                        {'inactive'}
                                     </Badge>
                                 ) : (
                                     <Badge color="emerald" icon={StatusOnlineIcon}>
-                                        {item.status}
+                                        {'active'}
                                     </Badge>
                                 )}
                             </TableCell>
                             <TableCell>
-                                <Switch size="medium" />
+                                <Switch
+                                    defaultChecked
+                                    onChange={handleSwitchButton}
+                                    size="medium"
+                                />
                             </TableCell>
                         </TableRow>
                     ))}
