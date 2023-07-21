@@ -1,7 +1,7 @@
 import { BackgroundWrapper } from '../backgroundWrapper/BackgroundWrapper';
 import { Navbar } from '../navbar/Navbar';
 import s from './Calendar.module.css';
-import { CalendarAutomation } from './calendarComponents/CalendarAutomation';
+// import { CalendarAutomation } from './calendarComponents/CalendarAutomation';
 import { CalendarNavigation } from './calendarComponents/CalendarNavigation';
 
 export const Calendar = () => {
@@ -13,7 +13,7 @@ export const Calendar = () => {
                     <h1>Automation Calendar</h1>
                     <div className={s.calendarComponent}>
                         <CalendarNavigation />
-                        <CalendarAutomation />
+                        {/* <CalendarAutomation /> */}
                     </div>
                 </div>
             </BackgroundWrapper>

@@ -1,10 +1,5 @@
 import { StatusOnlineIcon } from '@heroicons/react/outline';
-import {
-    Badge, Callout,
-    Card, Grid, Metric,
-    TabPanel,
-    Text
-} from '@tremor/react';
+import { Badge, Callout, Card, Grid, Metric, TabPanel, Text } from '@tremor/react';
 import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
 type Props = {
@@ -17,7 +12,7 @@ export const CoursPanel = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">18.4 KWh</Metric>
+                    <Metric className="text-black">188.2</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -29,18 +24,18 @@ export const CoursPanel = (props: Props) => {
 
                 <Card className="max-w mx-auto">
                     <Text>Humidité actuelle : {props.room}</Text>
-                    <Metric className="text-black">24%</Metric>
+                    <Metric className="text-black">12%</Metric>
                     <Callout
                         className="h-24 mt-4"
-                        title="Attention au taux important d'humiditié dans l'air."
-                        color="orange"
+                        title="Humiditié dans l'air correct."
+                        color="green"
                     >
-                        Régulerez l'aération de la salle.
+                        Aucune intervention à faire.
                     </Callout>
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange title="Ventilation" value={18} room={props.room} mesure="°C" />
                 </Card>
 
                 <Card className="max-w mx-auto">
@@ -48,7 +43,7 @@ export const CoursPanel = (props: Props) => {
                         Light Turn On
                     </Badge>
                     <Text>Total des utilisateurs </Text>
-                    <Metric>54 </Metric>
+                    <Metric>12 </Metric>
                 </Card>
             </Grid>
         </TabPanel>

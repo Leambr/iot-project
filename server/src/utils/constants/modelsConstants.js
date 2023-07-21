@@ -1,6 +1,6 @@
 // Model
 exports.sensorModel = 'Sensor';
-exports.lightSensorModel = 'LightSensor';
+exports.luminositySensorModel = 'LightSensor';
 exports.humiditySensorModel = 'HumiditySensor';
 exports.co2SensorModel = 'Co2Sensor';
 exports.movingSensorModel = 'MovingSensor';

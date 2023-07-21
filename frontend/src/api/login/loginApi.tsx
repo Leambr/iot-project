@@ -1,7 +1,8 @@
-import { AuthentificationFailed } from '../components/login/types';
+import { AuthentificationFailed } from './types';
 
 export const loginApi = async (username: string, password: string): Promise<any> => {
-    await fetch('http://localhost:3123/api/login', {
+    const url = import.meta.env.VITE_IOT_URL + 'login';
+    await fetch(url, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -18,8 +19,7 @@ export const loginApi = async (username: string, password: string): Promise<any>
             throw new Error(`Upstream HTTP error: ${response.status} ${response.statusText}`);
         }
         return response.json().then((data) => {
-            localStorage.setItem('user', JSON.stringify(data));
-            
+            localStorage.setItem('user', JSON.stringify(data.token));
         });
     });
 };

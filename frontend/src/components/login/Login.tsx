@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import s from './Login.module.css';
-import { loginApi } from '../../api/loginApi';
+import { loginApi } from '../../api/login/loginApi';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -13,7 +13,7 @@ export default function Login() {
         e.preventDefault();
         try {
             await loginApi(username, password);
-            navigate('/');
+            navigate('/dashboard');
         } catch (error) {
             setErrorMessage(true);
         }

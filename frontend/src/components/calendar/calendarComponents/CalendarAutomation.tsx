@@ -10,12 +10,12 @@ export const CalendarAutomation = () => {
                     <span>345 KWh</span>
                 </div>
                 <div className={s.sensor}>
-                    <p>Dépenses énérgétiques : </p>
-                    <span>345 KWh</span>
+                    <p>Température prévue : </p>
+                    <span>18°C</span>
                 </div>
                 <div className={s.sensor}>
-                    <p>Dépenses énérgétiques : </p>
-                    <span>345 KWh</span>
+                    <p>Intensité lumineuse :  </p>
+                    <span>45%</span>
                 </div>
             </div>
         </div>

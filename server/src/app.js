@@ -9,13 +9,15 @@ const roomRouter = require('./routes/roomRouter');
 const authRouter = require('./routes/authRouter');
 const sensorRouter = require('./routes/sensorRouter');
 const humidityRouter = require('./routes/humidityRouter');
-const lightRouter = require('./routes/lightRouter');
+const luminosityRouter = require('./routes/luminosityRouter');
 const temperatureRouter = require('./routes/temperatureRouter');
 const movingRouter = require('./routes/movingRouter');
 const trainingCoursesRouter = require('./routes/trainingCoursesRouter');
 const automationRouter = require('./routes/automationRouter');
 const jwtHelper = require('./utils/helper/jwtHelper');
 const cors = require('cors');
+
+const mqtt = require('./mqtt');
 
 app.use(morgan('dev')).use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,35 +33,17 @@ app.get('/', (_, res) => res.send('Hello,Bidsflsdfghesdfcfy'));
 app.use('/api', authRouter);
 app.use(
     '/api',
-    jwtHelper.authenticateToken,
     userRouter,
     roomRouter,
     sensorRouter,
     co2Router,
     humidityRouter,
-    lightRouter,
+    luminosityRouter,
     temperatureRouter,
     movingRouter,
     trainingCoursesRouter,
     automationRouter
 );
-
-// app.get('/api/users', (req, res) => {
-
-//   res.setHeader('Content-Type', 'application/json');
-//   const SelectQuery = 'SELECT * FROM users';
-//   db.query(SelectQuery, (err, result) => {
-//     console.log('/api/users');
-
-//     if (err) {
-//       console.log('if error', err);
-//       res.send(err);
-//     } else {
-//       console.log('else result', result);
-//       res.send(result);
-//     }
-//   });
-// });
 
 app.listen(port, () =>
     console.log(`Notre application Node est démarrée sur : http://localhost:${port}`)

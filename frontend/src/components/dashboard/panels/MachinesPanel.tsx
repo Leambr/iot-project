@@ -1,9 +1,14 @@
 import { StatusOnlineIcon } from '@heroicons/react/outline';
 import {
-    Badge, Callout,
-    Card, CategoryBar, Flex, Grid, Metric,
+    Badge,
+    Callout,
+    Card,
+    CategoryBar,
+    Flex,
+    Grid,
+    Metric,
     TabPanel,
-    Text
+    Text,
 } from '@tremor/react';
 import { InputCardRange } from '../inputLuminosityRange/InputCardRange';
 
@@ -17,7 +22,7 @@ export const MachinesPanel = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">18.4 KWh</Metric>
+                    <Metric className="text-black">108.4 KWh</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -57,13 +62,19 @@ export const MachinesPanel = (props: Props) => {
                     <InputCardRange
                         title="Luminosité"
                         room={props.room}
+                        value={10}
                         mesure="%"
                         stepRange={10}
                     />
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange
+                        title="Ventilation"
+                        value={22.4}
+                        room={props.room}
+                        mesure="°C"
+                    />
                 </Card>
 
                 <Card className="max-w mx-auto">

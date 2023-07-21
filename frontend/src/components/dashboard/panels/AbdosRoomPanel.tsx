@@ -12,7 +12,7 @@ export const AbdosRoomPanel = (props: Props) => {
             <Grid numItems={3} className="gap-6 mt-16">
                 <Card className="max-w mx-auto">
                     <Text>Dernière dépense énergétique : {props.room} </Text>
-                    <Metric className="text-black">18.4 KWh</Metric>
+                    <Metric className="text-black">148.3 KWh</Metric>
                     <Callout
                         className="h-24 mt-4"
                         title="La consommation éléctrique est bonne."
@@ -24,18 +24,18 @@ export const AbdosRoomPanel = (props: Props) => {
 
                 <Card className="max-w mx-auto">
                     <Text>Humidité actuelle : {props.room}</Text>
-                    <Metric className="text-black">24%</Metric>
+                    <Metric className="text-black">45%</Metric>
                     <Callout
                         className="h-24 mt-4"
-                        title="Attention au taux important d'humiditié dans l'air."
-                        color="orange"
+                        title="Humidité de l'air critique."
+                        color="red"
                     >
                         Régulerez l'aération de la salle.
                     </Callout>
                 </Card>
 
                 <Card className="max-w mx-auto">
-                    <InputCardRange title="Ventilation" room={props.room} mesure="°C" />
+                    <InputCardRange title="Ventilation" value={22} room={props.room} mesure="°C" />
                 </Card>
 
                 <Card className="max-w mx-auto">
